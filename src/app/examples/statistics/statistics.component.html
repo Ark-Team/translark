@@ -1,18 +1,27 @@
 <div class="wrapper">
   <div class="page-header section-dark" style="background-image: url('./assets/img/login-image.jpg');">
     <div class="filter"></div>
+    <div class="filter"></div>
+    <div class="filter"></div>
     <div class="container">
       <div class="">
         <div class="card card-statistics text-center">
-          <h2 class="title">Reporte gráfico.</h2>
+          <h1 class="title">ESTADÍSTICOS.</h1>
           <div class="card-body">
-            <div>
-              
+            <div class="row">
+              <div class="col">
+                <div class="chart" style="width: auto; height: auto;">
+                  <canvas  baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                    [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
+                    [legend]="pieChartLegend">
+                  </canvas>
+                </div>
+              </div>
+              <div class="col">
+                <h4 class="title">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
+                <a href="#" class="btn btn-danger">Ir al traductor</a>
+              </div>
             </div>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
