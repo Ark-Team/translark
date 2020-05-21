@@ -13,10 +13,11 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Type your question here.">
+                            <input type="text" class="form-control" placeholder="Type your question here."
+                                #firstNameInput [(ngModel)]="pregunta">
                         </div>
                         <button type="button" class="btn btn-default btn-round"
-                            (click)="openWindowCustomClass(content)">Preguntar</button>
+                            (click)="openWindowCustomClass(content); question(firstNameInput)">Preguntar</button>
 
                     </div>
                     <h2 class="presentation-subtitle text-center">Type your question and wait for an answer.</h2>
@@ -35,6 +36,6 @@
         </button>
     </div>
     <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        <p>{{respuesta}}&hellip;</p>
     </div>
 </ng-template>

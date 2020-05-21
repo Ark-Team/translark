@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { NgbDateStruct, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceService } from 'app/service/service.service';
 
 @Component({
   selector: 'app-components',
@@ -23,6 +24,8 @@ import { NgbDateStruct, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class ComponentsComponent implements OnInit {
+  respuesta: string;
+  pregunta: string;
   page = 4;
   page1 = 5;
   focus;
@@ -30,7 +33,7 @@ export class ComponentsComponent implements OnInit {
   focus2;
   date: { year: number, month: number };
   model: NgbDateStruct;
-  constructor(private renderer: Renderer2, private modalService: NgbModal) { }
+  constructor(private renderer: Renderer2, private modalService: NgbModal, public service: ServiceService) { }
   isWeekend(date: NgbDateStruct) {
     const d = new Date(date.year, date.month - 1, date.day);
     return d.getDay() === 0 || d.getDay() === 6;
@@ -41,6 +44,7 @@ export class ComponentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pregunta = "Hello";
     let input_group_focus = document.getElementsByClassName('form-control');
     let input_group = document.getElementsByClassName('input-group');
     for (let i = 0; i < input_group.length; i++) {
@@ -53,7 +57,13 @@ export class ComponentsComponent implements OnInit {
     }
   }
 
+  question(pregunta: HTMLInputElement) {
+    this.service.searchAnswer(pregunta.value).subscribe(data => {
+      this.respuesta = data.respuesta;
+    });
+  }
   openWindowCustomClass(content) {
+    console.log(this.pregunta);
     this.modalService.open(content, { windowClass: 'dark-modal', centered: true });
   }
 }
