@@ -2,9 +2,11 @@
 # Módulo de preguntas y respuestas.
 Componente para gestionar PQRSF radicadas en nuestro software.
 
-Modulo de conversion de preguntas y respuestas que se alimentan de una base de datos.
-Traduccion y respuestas en el idioma origen.
-Componente estadistico para respuestas acertadas y no acertadas en general y filtrado por idiomas.
+<ul>
+<li>Modulo de conversion de preguntas y respuestas que se alimentan de una base de datos.<br>
+<li>Traduccion y respuestas en el idioma origen.<br>
+<li>Componente estadistico para respuestas acertadas y no acertadas en general y filtrado por idiomas.<br>
+</ul>
 <a href="https://pqrsf-arkteam.web.app/">Pqrsf-ArkTeam</a>
 
 # Estudiantes
