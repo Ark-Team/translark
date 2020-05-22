@@ -1,4 +1,4 @@
-# [Translark]
+# Translark
 # Módulo de preguntas y respuestas.
 Componente para gestionar PQRSF radicadas en nuestro software.
 
