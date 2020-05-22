@@ -1,10 +1,10 @@
 {
-  "name": "paper-kit-2-angular",
-  "version": "1.3.0",
+  "name": "translark",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/creativetimofficial/pk2-angular.git"
+    "url": "https://github.com/Ark-Team/translark.git"
   },
   "scripts": {
     "ng": "ng",
@@ -27,10 +27,10 @@
     "@angular/platform-browser-dynamic": "9.0.6",
     "@angular/router": "9.0.6",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
-    "bootstrap": "4.1.2",
+    "bootstrap": "4.3.1",
     "chart.js": "^2.9.3",
     "core-js": "3.6.4",
-    "jquery": "3.2.1",
+    "jquery": "3.5.1",
     "jw-bootstrap-switch-ng2": "2.0.1",
     "ng2-charts": "^2.3.2",
     "ng2-nouislider": "1.7.12",
