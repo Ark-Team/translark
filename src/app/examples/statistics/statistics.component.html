@@ -11,15 +11,35 @@
             <div class="row">
               <div class="col">
                 <div class="chart" style="width: auto; height: auto;">
-                  <canvas  baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                  <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
                     [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
                     [legend]="pieChartLegend">
                   </canvas>
                 </div>
               </div>
               <div class="col">
-                <h4 class="title">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
-                <a href="#" class="btn btn-danger">Ir al traductor</a>
+                <div class="row">
+                  <h4 class="title" *ngIf="!flag">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
+                  <h4 class="title" *ngIf="flag">Grafica de preguntas acertadas y preguntas no acertadas en: <b><u>{{languange}}</u></b></h4>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div ngbDropdown class="d-inline-block dropdown">
+                      <a class="btn btn-default" id="dropdownBasic1" ngbDropdownToggle>Idioma</a>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-default">
+                        <button class="dropdown-item" style="cursor: pointer;"
+                          (click)="getLanguageSelected('Ingles')">Ingles</button>
+                        <button class="dropdown-item" style="cursor: pointer;"
+                          (click)="getLanguageSelected('Frances')">Frances</button>
+                        <button class="dropdown-item" style="cursor: pointer;"
+                          (click)="getLanguageSelected('Italiano')">Italiano</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <a href="#" class="btn btn-danger">Ir al traductor</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
