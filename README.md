@@ -1,7 +1,5 @@
 # Translark
 # Módulo de preguntas y respuestas.
-Componente para gestionar PQRSF radicadas en nuestro software.
-
 <ul>
 <li>Modulo de conversion de preguntas y respuestas que se alimentan de una base de datos.<br>
 <li>Traduccion y respuestas en el idioma origen.<br>
