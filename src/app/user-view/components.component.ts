@@ -31,7 +31,7 @@ export class ComponentsComponent implements OnInit {
   constructor(private modalService: NgbModal, public service: ServiceService) { }
 
   ngOnInit() {
-    this.pregunta = "Hello";
+    this.pregunta = "";
   }
 
   question(pregunta: HTMLInputElement) {
@@ -40,7 +40,6 @@ export class ComponentsComponent implements OnInit {
     });
   }
   openWindowCustomClass(content) {
-    console.log(this.pregunta);
     this.modalService.open(content, { windowClass: 'dark-modal', centered: true });
   }
 }

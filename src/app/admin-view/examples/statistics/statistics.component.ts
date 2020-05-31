@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { ServiceService } from 'app/service/service.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Label } from 'ng2-charts';
 export class StatisticsComponent implements OnInit {
 
   flag: boolean = false;
+  flagFull: boolean = false;
   languange: string;
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -40,10 +42,10 @@ export class StatisticsComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(public service: ServiceService) { }
 
   ngOnInit(): void {
-    this.loadInitialGraphic();
+    this.getEstadisticas();
   }
 
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -54,9 +56,12 @@ export class StatisticsComponent implements OnInit {
     console.log(event, active);
   }
 
-  loadInitialGraphic() {
+  getEstadisticas(){
     this.pieChartLabels = [['Acertadas'], ['Fallidas']];
-    this.pieChartData = [300, 500];
+    this.service.getEstadisticas().subscribe(data=>{
+      this.pieChartData = [data.acetadas, data.fallidas];
+      this.flagFull = true;
+    })
   }
 
   getLanguageSelected(languageAux: string) {

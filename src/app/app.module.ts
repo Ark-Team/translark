@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
-import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
+import { ComponentsModule } from './user-view/components.module';
+import { ExamplesModule } from './admin-view/examples/examples.module';
 import { HttpClientModule } from '@angular/common/http';
 
 

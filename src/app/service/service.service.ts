@@ -7,8 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
+
   public url: string;
   constructor(public httpClient: HttpClient) { this.url = environment.apiUri }
+
   public searchAnswer(pregunta: string): Observable<any> {
     return this.httpClient.get(this.url + "pregunta", {
       params: {
@@ -16,4 +18,13 @@ export class ServiceService {
       }
     });
   }
+
+  public getEstadisticasIdioma(idioma: string): Observable<any>{
+    return this.httpClient.get(this.url+"estadisticas/"+idioma); 
+  }
+
+  public getEstadisticas():Observable<any>{
+    return this.httpClient.get(this.url+"estadisticas"); 
+  }
+
 }

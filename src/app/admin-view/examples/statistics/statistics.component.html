@@ -10,7 +10,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <div class="chart" style="width: auto; height: auto;">
+                <div *ngIf="flagFull" class="chart" style="width: auto; height: auto;">
                   <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
                     [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
                     [legend]="pieChartLegend">
@@ -19,7 +19,7 @@
               </div>
               <div class="col">
                 <div class="row">
-                  <h4 class="title" *ngIf="!flag">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
+                  <h4 class="title" *ngIf="flagFull">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
                   <h4 class="title" *ngIf="flag">Grafica de preguntas acertadas y preguntas no acertadas en: <b><u>{{languange}}</u></b></h4>
                 </div>
                 <div class="row">
