@@ -8,6 +8,8 @@
         padding: 0px;
         position: absolute;
         visibility: hidden;
+        max-height:200px;
+        overflow: scroll;
 
         @include opacity(0);
         @include box-shadow($dropdown-shadow);

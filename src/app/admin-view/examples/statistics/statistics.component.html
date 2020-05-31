@@ -20,19 +20,16 @@
               <div class="col">
                 <div class="row">
                   <h4 class="title" *ngIf="flagFull">Grafica de preguntas acertadas y preguntas no acertadas.</h4>
-                  <h4 class="title" *ngIf="flag">Grafica de preguntas acertadas y preguntas no acertadas en: <b><u>{{languange}}</u></b></h4>
+                  <h4 class="title" *ngIf="flag">Grafica de preguntas acertadas y preguntas no acertadas en:
+                    <b><u>{{languange}}</u></b></h4>
                 </div>
                 <div class="row">
                   <div class="col">
                     <div ngbDropdown class="d-inline-block dropdown">
                       <a class="btn btn-default" id="dropdownBasic1" ngbDropdownToggle>Idioma</a>
                       <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-default">
-                        <button class="dropdown-item" style="cursor: pointer;"
-                          (click)="getLanguageSelected('Ingles')">Ingles</button>
-                        <button class="dropdown-item" style="cursor: pointer;"
-                          (click)="getLanguageSelected('Frances')">Frances</button>
-                        <button class="dropdown-item" style="cursor: pointer;"
-                          (click)="getLanguageSelected('Italiano')">Italiano</button>
+                        <button *ngFor="let language of languages" class="dropdown-item" style="cursor: pointer;"
+                          (click)="getLanguageSelected(language)">{{language}}</button>
                       </div>
                     </div>
                   </div>
