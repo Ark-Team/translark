@@ -8,7 +8,7 @@
 <a href="https://pqrsf-arkteam.web.app/">Pqrsf-ArkTeam</a>
 
 # Estudiantes
-Juan Camilo Acosta Zabala
+Juan Camilo Acosta Zabala <br>
 Luis Felipe Rosero Calvachi
 
 Universidad de San Buenaventura - Cali
